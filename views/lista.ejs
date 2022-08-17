@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/estilos.css">
         <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    <title>lista</title>
+    <title>Safe food</title>
 </head>
 <body>
     <div class="container">
@@ -200,7 +200,7 @@
 
             <th scope="col">Alimento</th>
             <th scope="col">Data</th>
-            <th scope="col">Acoes</th>
+            <th scope="col" class="text-center">Ações</th>
 
 
           </tr>
@@ -214,13 +214,12 @@
                 <%=dadosAberto[n].titulo%>
             </div></td>
             <td><div class="card-header">
-
-                <%=dadosAberto[n].data.getDate()+1%> /
-                    <%=dadosAberto[n].data.getMonth()+1%> /
-                        <%=dadosAberto[n].data.getFullYear()%>
+                <%=dadosAberto[n].data.toDateString()%>
+                <!-- <%=dadosAberto[n].data.getDate()+1%>/<%=dadosAberto[n].data.getMonth()+1%>/<%=dadosAberto[n].data.getFullYear()%> -->
             </div></td>
-            <td><div class="input-group"">
-                <a href="/entregue?id=<%=dadosAberto[n].id%>" class="btn btn-success form-control">  Consumido</a>
+            <td><div class="input-group">
+                <a href="/entregue?id=<%=dadosAberto[n].id%>" class="btn btn-info form-control">  Consumido</a>
+                <a href="/entregue?id=<%=dadosAberto[n].id%>" class="btn btn-danger form-control">  Descartado</a>
                 <a href="/alterar?id=<%=dadosAberto[n].id%>" class="btn btn-warning form-control">  Alterar</a>
                 <a href="/deletar?id=<%=dadosAberto[n].id%>" class="btn btn-dark form-control">Excluir</a>
     </div></td>
