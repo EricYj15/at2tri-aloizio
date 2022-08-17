@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alimentos</title>
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <!-- icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Lista de Alimentos</h1>
+        <h2 class="text-center">
+            Usuário: <%=nome%>
+        </h2>
+        <div class="row">
+            <div class="col-sm order-2">
+                <h3 class="text-center">Deletar</h3>
+                <form action="/deletar" method="post" class="form-control">
+                    <input type="hidden" name="id_u" value="<%=id%>">
+                    <input type="hidden" name="id_a" value="<%=deletar._id%>">
+                    <input type="hidden" name="nome" value="<%=nome%>">
+
+                    <label for="nome" class="form-control bg-dark text-bg-primary">Titulo da Atividade:</label>
+                    <input type="text" name="titulo" class="form-control" placeholder="Título" value="<%=deletar.titulo%>" disabled>
+
+                    <label for="tipo" class="form-control bg-dark text-bg-primary">Tipo:</label>
+                    <select name="tipo" class="form-control" disabled>
+                        <option value="0" <%=deletar.tipo=="0"?"selected":""%>>Selecione...</option>
+                        <option value="comida" <%=deletar.tipo=="comida"?"selected":""%>>Comida</option>
+                        <option value="bebida" <%=deletar.tipo=="bebida"?"selected":""%>>Bebida</option>
+                    </select>
+
+                    <label class="form-control bg-dark text-bg-primary">Observações:</label>
+                    <textarea name="observacao" id="" cols="30" rows="10" class="form-control" disabled><%=deletar.observacao%></textarea>
+                    
+                    <div class="input-group">
+                    <input type="button" value="Voltar" class="form-control btn btn-info" onclick="history.back()">
+                    <input type="submit" value="deletar" class="form-control btn btn-dark">
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    <img draggable="false" src="img/lista.png"><h2 class="text-logo">Food list</h2>
+</body>
+</html>

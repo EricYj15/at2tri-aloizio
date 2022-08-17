@@ -1,0 +1,23 @@
+input, i{
+    margin-bottom: 10px;
+}
+textarea{
+    resize:none
+}
+img{
+    left: 0;
+    top: 0;
+    /* height: 100px;
+    width: 100px; */
+    position: center;
+    padding: 50px;
+}
+.text-logo{
+    left: 100px;
+    top: 25px;
+    position: center;
+}
+
+.home{
+margin-top: 1cm;
+}
